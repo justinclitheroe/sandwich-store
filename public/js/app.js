@@ -20,11 +20,11 @@ class SandwichDashboard extends React.Component {
   };
 
   handleEditFormSubmit = (attrs) => {
-    this.updateSandwiches(attrs);
+    this.updateSandwich(attrs);
   };
 
-  handleTrashClick = (sandwichesId) => {
-    this.deleteSandwiches(sandwichesId);
+  handleTrashClick = (sandwichId) => {
+    this.deleteSandwich(sandwichId);
   };
 
   createSandwich = (sandwich) => {
