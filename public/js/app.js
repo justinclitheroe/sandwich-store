@@ -37,11 +37,30 @@ class SandwichDashboard extends React.Component {
   }
 
   updateSandwich = (sandwich) => {
-    
+    this.setState({
+      sandwiches: this.state.sandwiches.map((sandwich) => {
+        if (sandwich.id === attrs.id) {
+          return Object.assign({}, sandwich, {
+            title: attrs.title,
+            project: attrs.project,
+          });
+        } else {
+          return sandwich;
+        }
+      }),
+    });
+
+    client.updateTimer(attrs);
   }
 
-  deleteSandwich = (sandwich) => {
-    
+  deleteSandwich = (sandwichId) => {
+    this.setState({
+      sandwiches: this.state.sandwiches.filter(t => t.id !== sandwichId),
+    });
+
+    client.deleteSandwich(
+      { id: sandwichId }
+    );
   }
 
 
