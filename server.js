@@ -6,7 +6,7 @@ const path = require('path');
 
 const app = express();
 
-const DATA_FILE = path.join(__dirname, 'data.json');
+const DATA_FILE = path.join(__dirname, 'static.json');
 
 app.set('port', (process.env.PORT || 3000));
 
